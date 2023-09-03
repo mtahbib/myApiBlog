@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- Cdn and daisy ui links  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              banner: "#FF1F3D",
+              genre: " #25252526", 
+            
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet"type="text/css"/>
+      <title>Prog Tube</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      .font{
+        font-family: 'Inter', sans-serif;
+      }
+     
+  </style>
+  </head>
+ <body class=".font">
+    <!-- Custom nav bar  -->
+  <header class=" mx-auto mt-4 border-b-2 border-gray-300 max-w-7xl">
+      <div class="navbar flex flex-col lg:flex-row bg-base-100 items-center justify-between ">
+        <!-- image -->
+        <!-- icon is clickable -->
+        <div class="navbar-start">
+          <a href="index.html">
+            <img class="mx-auto lg:mx-0"src="./Images/Logo.png"/>
+          </a>
+        </div>
+        <div class="navbar-center mt-4 ">
+        <button class="btn lg:-mt-3 hover:bg-[#FF1F3D] "onclick="sorter()">Sort by view</button>
+        </div>
+        <div class="navbar-end lg:mt-0 mt-3 ">
+          <a href="blog.html" target=""><button class="mr-14 btn text-xl  text-white bg-[#FF1F3D]">Blog
+            </button>
+        </a>
+        </div>
+      </div>
+    </header>
+<!-- 
+    <div onclick="handleMe(this)" class="mx-auto card w-11/12 p-5 h-[350px] border border-solid border-stone-200 rounded-lg shadow-xl">
+      <div class=" bg-[#1111110D] shadow-xl h-[250px]"><figure><img class="mt-8" src="images/prod3.png" alt="fruits" height="131" width="106"/></figure></div>
+      <div class="mt-4 mx-auto rating rating-sm"> -->
+    <!-- header section ends -->
+
+    <!-- main -->
+    <main class="max-w-7xl mx-auto mt-8 p-4">
+      <div id="tab-container"class="lg:flex-row flex flex-col gap-6 lg:mb-10 justify-center">
+      </div>
+
+      <!-- card section starts-->
+      <div id="card-container" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
+    </div>
+      <!-- card section ends -->
+    </main>
+    <!-- main section ends -->
+    <script src="functions.js"></script>
+    <script src="content.js"></script>
+  </body>
+</html>
