@@ -3,20 +3,20 @@ const apiHandler = async () => {
     const myData = await res.json();
     const container = document.getElementById("tab-container");
     const apiData = myData.data;
-    const desiredCategoryId = "1005";
+    const whatCtegory = "1005";
     apiData.forEach((category) => {
-      const mydiv = divBox(category.category, category.category_id, desiredCategoryId);
+      const mydiv = divBox(category.category, category.category_id, whatCtegory);
       container.appendChild(mydiv);
     });
   };
 
   // MAIN DIV
-const divBox = (categoryName, categoryId, desiredCategoryId) => {
+const divBox = (name, id, whatCtegory) => {
   const div = document.createElement("div");
-  const onClickAction = (categoryId === desiredCategoryId) ? "drawOnLoadContent" : "handleLoadContent";
+  const onClickAction = (id === whatCtegory) ? "drawOnLoadContent" : "handleLoadContent";
   div.innerHTML = `
   <div class="">
-  <a onclick="${onClickAction}('${categoryId}')" class="tab text-black  hover:bg-[#FF1F3D]  text-lg font-medium ">${categoryName}</a>
+  <a onclick="${onClickAction}('${id}')" class="tab text-black  hover:bg-[#FF1F3D]  text-lg font-medium ">${name}</a>
     </div>`;
   return div;
 };
@@ -34,15 +34,15 @@ function sorter(){
 }
 
 let cardVal = [];
-const handleLoadContent = async (categoryID) => {
-    const myData = await dataFetcher(categoryID);
+const handleLoadContent = async (id) => {
+    const myData = await dataFetcher(id);
     cardVal = myData.data;
     // console.log(cardVal)
     renderCards(cardVal);
 };
 
-const dataFetcher = async (categoryID) => {
-  const urlApiCat = `https://openapi.programming-hero.com/api/videos/category/${categoryID}`;
+const dataFetcher = async (id) => {
+  const urlApiCat = `https://openapi.programming-hero.com/api/videos/category/${id}`;
   const res = await fetch(urlApiCat);
   return res.json();
 };

@@ -1,16 +1,20 @@
 function drawOnLoadContent() {
-    const cardBox = document.getElementById("main-card");
-    cardBox.innerHTML = "";
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <div class="flex flex-col items-center  h-screen mx-auto">
-    <img src="./Images/Icon.png" alt="" class="mb-3 lg:mx-[600px]" >
-    <h3 class="text-4xl font-bold text-center">Oops!! Sorry, There is no 
-    <br> content here</h3>
-</div>
-`;
-    cardBox.appendChild(div);
-  }
+  
+  const cardBox = document.getElementById("main-card");
+  cardBox.setAttribute("class", "");
+  cardBox.innerHTML = "";
+  const div = document.createElement("div");
+  div.innerHTML = `
+  <div class="mx-auto text-center ">
+      <div>
+          <img src="./Images/Icon.png" alt="" class="mx-auto" />
+      </div>
+      <h3 class="text-4xl font-bold">Oops!! Sorry, There is no<br>content here</h3>
+  </div>
+  `;
+ 
+  cardBox.appendChild(div);
+}
   
 const renderCards = (data) => {
     const cardBox = document.getElementById("main-card");
@@ -19,21 +23,21 @@ const renderCards = (data) => {
       const time = content.others.posted_date;
       const totalSeconds = time;
       const totalHours = Math.floor(totalSeconds / 3600);
-      const totalMinutes = Math.floor((totalSeconds % 3600) / 60);
-      const final_time= time ? `${totalHours} hrs ${totalMinutes} min ago` : " ";
+      const totalMinutes = Math.floor((totalSeconds % 3600)/60);
+      const final_time= time ?`${totalHours} hrs ${totalMinutes} min ago` : " ";
       const div = document.createElement("div");
       div.innerHTML = `
       <figure class="relative">
     <img class="w-full lg:w-72 mb-3 rounded-md h-44" 
     src="${content.thumbnail}"/>
-    <p class="absolute bottom-3 right-3 lg:right-10 text-white bg-black p-2 rounded-lg text-xs  lg:text-base">${final_time}
+    <p class="absolute bottom-3 right-3  text-white lg:mr-2 bg-black  rounded-lg text-xs  lg:text-base">${final_time}
     </p>
   </figure>
    <div class="flex gap-2 mt-5 mb-8">
       <div class="flex ">
       <img class="w-8 h-8 rounded-full"src=${content.authors[0].profile_picture} " />
       </div>
-      
+
       <div class="flex flex-col">
       <h2 class="text-xl font-bold">${content.title}</h2>
 

@@ -2,10 +2,13 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <!-- Cdn and daisy ui links  -->
+   <!-- Cdn and daisy ui links  --> 
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+
 
       tailwind.config = {
         theme: {
@@ -29,45 +32,52 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+
       .font{
         font-family: 'Inter', sans-serif;
       }
+
      /* */
   </style>
   </head>
+
   <body class=".font">
     <!-- Custom nav bar  -->
   <header class=" mx-auto mt-4 border-b-2 border-gray-300 max-w-7xl">
-      <div class="navbar flex flex-col lg:flex-row bg-base-100 items-center justify-between ">
+
+      <div class="navbar flex flex-col lg:flex-row md:flex-row  items-center justify-between ">
         <!-- image -->
         <!-- icon is clickable -->
         <div class="navbar-start">
           <a href="index.html">
-            <img class="mx-auto lg:mx-0"src="./Images/Logo.png"/>
+            <img class="mx-auto lg:mx-0"
+            src="./Images/Logo.png"/>
           </a>
         </div>
         <div class="navbar-center mt-4 ">
-        <button class="btn lg:-mt-3 hover:bg-[#FF1F3D] "onclick="sorter() ">Sort by view</button>
+        <button class="btn lg:-mt-3 hover:bg-[#FF1F3D] 
+        "onclick="sorter() ">Sort by view</button>
         </div>
         <div class="navbar-end lg:mt-0 mt-3 ">
-          <a href="blog.html" target=""><button class="mr-14 btn text-xl  text-white bg-[#FF1F3D]">Blog
+          <a href="blog.html" target=""><button class="mr-14 btn text-xl  text-white bg-[#FF1F3D]">
+            Blog
             </button>
         </a>
         </div>
       </div>
     </header>
-    <!-- header section ends -->
 
-    <!-- main section starts -->
     <main class="max-w-7xl mx-auto mt-8 p-4">
-      <div id="tab-container"class="lg:flex-row flex flex-col gap-6 lg:mb-10 justify-center">
+      <div id="tab-container"class="lg:flex-row flex flex-col gap-6 lg:mb-10 
+      justify-center">
       </div>
-       <!-- card section starts-->
+
        <div id="main-card" class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5">
       </div>
-        <!-- card section ends -->
+       
+      
     </main>
-    <!-- main section ends -->
+    <!-- Links for js  -->
     <script src="content.js"></script>
     <script src="function.js"></script>
   </body>
